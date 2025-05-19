@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenResty Manager - Alternative of OpenResty Edge</title>
+    <script src="tailwindcss.js"></script>
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #9333ea 100%);
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .screenshot {
+            border-radius: 12px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: white;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover:after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans antialiased">
+    <!-- Header -->
+    <header class="gradient-bg text-white">
+        <div class="container mx-auto px-6 py-12">
+            <nav class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <img src="logo.png" width="48px">
+                    <span class="text-2xl font-bold">OpenResty Manager</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#features" class="nav-link">Features</a>
+                    <a href="#screenshots" class="nav-link">Screenshots</a>
+                    <a href="#installation" class="nav-link">Installation</a>
+                    <a href="#support" class="nav-link">Support</a>
+                </div>
+                <div class="md:hidden">
+                    <button class="text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </nav>
+            <div class="mt-20 md:mt-32 text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">Alternative of OpenResty Edge</h1>
+                <p class="text-xl md:text-2xl max-w-3xl mx-auto mb-10 opacity-90">
+                    A powerful web-based management interface for OpenResty with server status monitoring, security, free SSL certificates, and more. 
+                </p>
+                <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-6">
+                    <a href="https://github.com/Safe3/openresty-manager" 
+                       class="bg-white text-purple-600 hover:bg-gray-100 px-8 py-4 rounded-lg font-semibold text-lg transition duration-300">
+                        <i class="fab fa-github mr-2"></i> View on GitHub
+                    </a>
+                    <a href="#installation" 
+                       class="bg-transparent border-2 border-white hover:bg-white hover:text-purple-600 px-8 py-4 rounded-lg font-semibold text-lg transition duration-300">
+                        <i class="fas fa-download mr-2"></i> Get Started
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Features</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    OpenResty Manager provides everything you need to manage your OpenResty server with ease.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="feature-card bg-gray-50 p-8 rounded-xl transition duration-300 hover:shadow-xl">
+                    <div class="text-purple-600 mb-6">
+                        <i class="fas fa-globe text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Reverse Proxy</h3>
+                    <p class="text-gray-600">
+                        Easily configure and manage reverse proxy settings for your websites with a user-friendly interface.
+                    </p>
+                </div>
+
+                <div class="feature-card bg-gray-50 p-8 rounded-xl transition duration-300 hover:shadow-xl">
+                    <div class="text-purple-600 mb-6">
+                        <i class="fas fa-chart-line text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Server Status</h3>
+                    <p class="text-gray-600">
+                        Monitor your server's performance in real-time with detailed metrics and visualizations.
+                    </p>
+                </div>
+
+                <div class="feature-card bg-gray-50 p-8 rounded-xl transition duration-300 hover:shadow-xl">
+                    <div class="text-purple-600 mb-6">
+                        <i class="fas fa-certificate text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Free SSL</h3>
+                    <p class="text-gray-600">
+                        Automatically manage SSL certificates with Let's Encrypt integration for secure connections.
+                    </p>
+                </div>
+
+                <div class="feature-card bg-gray-50 p-8 rounded-xl transition duration-300 hover:shadow-xl">
+                    <div class="text-purple-600 mb-6">
+                        <i class="fas fa-lock text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Access Control</h3>
+                    <p class="text-gray-600">
+                        Secure your applications with powerful access control features to protect your resources.
+                    </p>
+                </div>
+
+                <div class="feature-card bg-gray-50 p-8 rounded-xl transition duration-300 hover:shadow-xl">
+                    <div class="text-purple-600 mb-6">
+                        <i class="fas fa-shield-alt text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">HTTP Flood Protection</h3>
+                    <p class="text-gray-600">
+                        Protect your websites from DDoS attacks with built-in HTTP flood protection mechanisms.
+                    </p>
+                </div>
+
+                <div class="feature-card bg-gray-50 p-8 rounded-xl transition duration-300 hover:shadow-xl">
+                    <div class="text-purple-600 mb-6">
+                        <i class="fas fa-history text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Easy to Use</h3>
+                    <p class="text-gray-600">
+                        User-friendly interface that doesn't require deep knowledge of OpenResty or Let's Encrypt.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshots Section -->
+    <section id="screenshots" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">See It In Action</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Take a look at the intuitive and powerful interface of OpenResty Manager.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="flex justify-center">
+                    <img src="om.png" 
+                         alt="Dashboard Screenshot" class="screenshot w-full max-w-2xl">
+                </div>
+                <div class="flex justify-center">
+                    <img src="cfg.png" 
+                         alt="Configuration Screenshot" class="screenshot w-full max-w-2xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Installation Section -->
+    <section id="installation" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Get Started in Minutes</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Simple installation process to get OpenResty Manager up and running.
+                </p>
+            </div>
+
+            <div class="max-w-4xl mx-auto bg-gray-50 rounded-xl p-8">
+                <h3 class="text-2xl font-bold mb-6 text-gray-800">Either Or Installation</h3>
+                
+                <div class="mb-8">
+                    <h4 class="text-lg font-semibold mb-3 text-gray-700 flex items-center">
+                        <span class="bg-purple-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-3">1</span>
+                        Host Version
+                    </h4>
+                    <div class="bg-gray-800 text-gray-100 p-4 rounded-lg overflow-x-auto">
+                        <code class="text-sm">
+                            sudo bash -c "$(curl -fsSL https://om.uusec.com/installer.sh)"
+                        </code>
+                    </div>
+                </div>
+
+                <div class="mb-8">
+                    <h4 class="text-lg font-semibold mb-3 text-gray-700 flex items-center">
+                        <span class="bg-purple-600 text-white rounded-full w-6 h-6 flex items-center justify-center mr-3">2</span>
+                        Docker Version
+                    </h4>
+                    <div class="bg-gray-800 text-gray-100 p-4 rounded-lg overflow-x-auto">
+                        <code class="text-sm">
+                            sudo bash -c "$(curl -fsSL https://om.uusec.com/docker_installer.sh)"
+                        </code>
+                    </div>
+                </div>
+                <div class="mt-10 text-center">
+                    <a href="https://github.com/Safe3/openresty-manager/blob/main/README.md" 
+                       class="inline-block bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg font-semibold transition duration-300">
+                        <i class="fas fa-book mr-2"></i> View Full Documentation
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support Section -->
+    <section id="support" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Need Help?</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    We're here to help you get the most out of OpenResty Manager.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div class="bg-white p-8 rounded-xl text-center">
+                    <div class="text-purple-600 mb-6">
+                        <i class="fas fa-bug text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Report Issues</h3>
+                    <p class="text-gray-600 mb-4">
+                        Found a bug or have a feature request? Open an issue on GitHub.
+                    </p>
+                    <a href="https://github.com/Safe3/openresty-manager/issues" 
+                       class="text-purple-600 font-semibold hover:underline">
+                        Go to Issues <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl text-center">
+                    <div class="text-purple-600 mb-6">
+                        <i class="fas fa-comments text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Community</h3>
+                    <p class="text-gray-600 mb-4">
+                        Join the discussion with other OpenResty Manager users and developers.
+                    </p>
+                    <a href="https://github.com/Safe3/openresty-manager/discussions" 
+                       class="text-purple-600 font-semibold hover:underline">
+                        Join Discussion <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl text-center">
+                    <div class="text-purple-600 mb-6">
+                        <i class="fas fa-envelope text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Contact</h3>
+                    <p class="text-gray-600 mb-4">
+                        Need direct support? Reach out to the maintainers.
+                    </p>
+                    <a href="mailto:support@uusec.com" 
+                       class="text-purple-600 font-semibold hover:underline">
+                        Email Us <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center space-x-3">
+                        <i class="fas fa-server text-2xl text-purple-400"></i>
+                        <span class="text-xl font-bold">OpenResty Manager</span>
+                    </div>
+                    <p class="text-gray-400 mt-2">Web UI for OpenResty</p>
+                </div>
+
+                <div class="flex space-x-6">
+                    <a href="https://github.com/Safe3/openresty-manager" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-github text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-twitter text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <i class="fab fa-discord text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">
+                    &copy; 2025 UUSEC. All rights reserved.
+                </p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">Privacy</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">Terms</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">License</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Mobile menu toggle would go here
+        // This is a placeholder for actual implementation
+        document.querySelector('.md\\:hidden button').addEventListener('click', function() {
+            alert('Mobile menu would open here in a full implementation');
+        });
+    </script>
+</body>
+</html>
