@@ -1,0 +1,13 @@
+/opt/om/nginx/logs/*.log {
+    create 0644
+    daily
+    dateext
+    rotate 30
+    missingok
+    notifempty
+    compress
+    sharedscripts
+    postrotate
+    kill -USR1 `cat /opt/om/nginx/logs/nginx.pid 2>/dev/null` 2>/dev/null || true
+    endscript
+}

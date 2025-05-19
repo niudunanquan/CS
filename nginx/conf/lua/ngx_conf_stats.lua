@@ -1,0 +1,2 @@
+require("om").stats()
+
